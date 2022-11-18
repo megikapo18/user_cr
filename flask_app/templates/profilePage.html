@@ -8,13 +8,15 @@
     <title>Profile</title>
 </head>
 <body class="container mt-5">
-
-    <h1>All users</h1>
-    <table  class="table">
+    
+    <h1>All users</h1> 
+    
+    <table  class="table table-sm">
         <tr>
             <th>Name</th>
             <th> Last Name</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
     
     {% for user in users %}
@@ -22,10 +24,14 @@
             <td>{{user.name}}</td>
             <td>{{user.lastName}}</td>
             <td>{{user.email}}</td>
+            <td><a href="/delete/{{user.id}}" class="text-decoration-none">Delete</a> <a href="/users/{{user.id}}/edit" class="text-decoration-none">Edit</a> <a href="/users/{{user.id}}" class="text-decoration-none">Show</a> </td>
         </tr>
     {% endfor %}
+        <tr>
+            
+        </tr>
     
-</table>
-    <a href="/">Create new users</a>
+    </table>
+    <a href="/" class="text-decoration-none">Create new users</a>
 </body>
 </html>
